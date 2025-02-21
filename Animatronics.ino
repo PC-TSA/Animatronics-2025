@@ -61,16 +61,16 @@ class pneumaticAxis {
 // Correct object instantiation
 pneumaticAxis lr(25, 27);  
 digitalOutController pump(23);  // Assign a valid pin number
-
+pneumaticAxis ladder(29, 31);  
 
 void setup() {
   pump.turn_on();
   
   Serial.begin(9600); // Initialize serial communication
-  pinMode(7, INPUT_PULLUP); // Set pin 7 as input with internal pull-up resistor
+  pinMode(52, INPUT_PULLUP); // Set pin 7 as input with internal pull-up resistor
   // Wait for the button to be pressed
 
-  while(digitalRead(7) == 1){
+  while(digitalRead(52) == 1){
     delay(500);
   }
   Serial.println("Button pressed");
@@ -78,9 +78,9 @@ void setup() {
 }
 
 void loop() {
-  lr.move_positive();
-  lr.move_negative();
-  pump.turn_on();
-  delay(10000);
-  pump.turn_off();
+  
+  ladder.move_positive();
+  delay(5000);
+  ladder.move_negative();
+  delay(5000);
 }
