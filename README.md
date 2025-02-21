@@ -20,5 +20,5 @@ Axis name options, box options (left to right, top to bottom):
 - ladder  
   - Ladder axis
 
-## Lights
+### Lights
 \<LIGHT, COLOR\>  
